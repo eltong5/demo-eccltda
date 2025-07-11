@@ -1,0 +1,59 @@
+/* globals.css */
+
+/* Importar Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos adicionales globales */
+
+/* Reseteo de márgenes y padding */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía global */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  background-color: #f7fafc; /* Fondo claro */
+  color: #333; /* Color de texto */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tipografía para encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700; /* Negrita */
+}
+
+/* Ajustes para el cuerpo de los enlaces */
+a {
+  color: #3182ce; /* Color principal para los enlaces */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #2b6cb0;
+}
+
+/* Clase de contenedor para centrado de elementos */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+}
