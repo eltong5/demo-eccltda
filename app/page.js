@@ -1,65 +1,88 @@
 // app/page.js
 
+import Header from './components/Header'
+import ContactForm from './components/ContactForm'
+import Footer from './components/Footer'
+
 export default function Home() {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="bg-blue-600 text-white py-6">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-semibold">Bienvenido a ECC Ltda</h1>
-          <p className="mt-2 text-lg">Consultoría, Construcción y Mantenimiento</p>
-        </div>
-      </header>
+      {/* Header fijo */}
+      <Header />
 
-      {/* Main Content */}
-      <main className="flex-grow">
-        <div className="container mx-auto px-4 py-12">
-          <section className="text-center">
-            <h2 className="text-3xl font-bold text-blue-600">Nuestros Servicios</h2>
-            <p className="mt-4 text-lg text-gray-700">
-              Ofrecemos soluciones de alta calidad en consultoría, construcción y mantenimiento. Trabajamos con tecnología de vanguardia para garantizar la satisfacción de nuestros clientes.
+      {/* Contenido principal con padding superior para evitar que lo tape el header */}
+      <main className="flex-grow pt-24" id="inicio">
+        {/* Hero */}
+        <section className="bg-blue-600 text-white py-20 px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Bienvenido a ECC Ltda</h1>
+            <p className="text-lg md:text-xl">
+              Ingeniería, construcción y mantenimiento con tecnología y experiencia.
             </p>
-          </section>
+          </div>
+        </section>
 
-          <section className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Servicio 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-blue-600">Consultoría</h3>
-              <p className="mt-4 text-gray-700">
-                Brindamos asesoría especializada en proyectos de ingeniería, optimización de procesos y más.
-              </p>
-            </div>
+        {/* Servicios */}
+        <section id="servicios" className="py-16 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-blue-700 mb-4">Nuestros Servicios</h2>
+            <p className="text-gray-700 mb-10">
+              Soluciones integrales con enfoque técnico, cumplimiento y calidad.
+            </p>
 
-            {/* Servicio 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-blue-600">Construcción</h3>
-              <p className="mt-4 text-gray-700">
-                Ofrecemos servicios completos de construcción con alta calidad y cumplimiento de plazos.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 className="text-2xl font-semibold text-blue-600 mb-2">Consultoría</h3>
+                <p className="text-gray-600">
+                  Diagnóstico, planeación y asesoría técnica para optimizar tus proyectos.
+                </p>
+              </div>
 
-            {/* Servicio 3 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-blue-600">Mantenimiento</h3>
-              <p className="mt-4 text-gray-700">
-                Realizamos mantenimiento preventivo y correctivo para garantizar la seguridad y funcionalidad de las instalaciones.
-              </p>
+              <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 className="text-2xl font-semibold text-blue-600 mb-2">Construcción</h3>
+                <p className="text-gray-600">
+                  Ejecución de obras civiles y eléctricas con estándares de alta calidad.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 className="text-2xl font-semibold text-blue-600 mb-2">Mantenimiento</h3>
+                <p className="text-gray-600">
+                  Servicios preventivos y correctivos para infraestructura y equipos críticos.
+                </p>
+              </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+
+        {/* Certificaciones */}
+        <section id="certificaciones" className="bg-white py-16 px-4">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-blue-700 mb-4">Certificaciones</h2>
+            <p className="text-gray-700 mb-8">
+              Respaldados por normas internacionales de calidad y seguridad.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-6">
+              <div className="bg-gray-100 px-6 py-4 rounded-lg shadow">
+                <p className="font-semibold text-gray-800">ISO 9001</p>
+              </div>
+              <div className="bg-gray-100 px-6 py-4 rounded-lg shadow">
+                <p className="font-semibold text-gray-800">ISO 45001</p>
+              </div>
+              <div className="bg-gray-100 px-6 py-4 rounded-lg shadow">
+                <p className="font-semibold text-gray-800">Registro RUC</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Formulario de contacto */}
+        <ContactForm />
       </main>
 
       {/* Footer */}
-      <footer className="bg-blue-600 text-white py-6">
-        <div className="container mx-auto text-center">
-          <p>&copy; {new Date().getFullYear()} ECC Ltda. Todos los derechos reservados.</p>
-          <p className="mt-2">
-            <a href="mailto:contacto@eccltda.com" className="hover:underline">
-              contacto@eccltda.com
-            </a>
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
